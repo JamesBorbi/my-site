@@ -19,8 +19,8 @@ import java.io.IOException;
  */
 public class QiniuCloudService {
 
-    private static final String ACCESS_KEY = "";
-    private static final String SECRET_KEY = "";
+    private static final String ACCESS_KEY = "123";
+    private static final String SECRET_KEY = "456";
     /**
      * 仓库
      */

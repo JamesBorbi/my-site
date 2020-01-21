@@ -57,6 +57,11 @@ public class HomeController extends BaseController{
     private OptionService optionService;
 
 
+    @ApiOperation("作品主页")
+    @GetMapping(value = {"", "/index"})
+    public String index(HttpServletRequest request, @RequestParam(value = "limit", defaultValue = "12") int limit) {
+        return this.index(1, limit, request);
+    }
 
     @ApiIgnore
     @GetMapping(value = {"/about", "/about/index"})
@@ -423,11 +428,7 @@ public class HomeController extends BaseController{
     }
 
 
-    @ApiOperation("作品主页")
-    @GetMapping(value = {"", "/index"})
-    public String index(HttpServletRequest request, @RequestParam(value = "limit", defaultValue = "12") int limit) {
-        return this.index(1, limit, request);
-    }
+
 
     @ApiOperation("作品主页-分页")
     @GetMapping(value = "/photo/page/{p}")

@@ -57,8 +57,8 @@ public class HomeController extends BaseController{
     private OptionService optionService;
 
 
-    @ApiOperation("作品主页")
-    @GetMapping(value = {"", "/index"})
+    @ApiOperation("work主页")
+    @GetMapping(value = {"work", "/index"})
     public String index(HttpServletRequest request, @RequestParam(value = "limit", defaultValue = "12") int limit) {
         return this.index(1, limit, request);
     }
@@ -74,11 +74,11 @@ public class HomeController extends BaseController{
 
 
     @ApiOperation("blog首页")
-    @GetMapping(value = {"/blog/","/blog/index"})
+    @GetMapping(value = {"","/blog/index"})
     public String blogIndex(
             HttpServletRequest request,
             @ApiParam(name = "limit", value = "页数", required = false)
-            @RequestParam(name = "limit", required = false, defaultValue = "11")
+            @RequestParam(name = "limit", required = false, defaultValue = "10")
                     int limit
     ){
         return this.blogIndex(request, 1, limit);
@@ -100,7 +100,7 @@ public class HomeController extends BaseController{
         request.setAttribute("articles", articles);//文章列表
         request.setAttribute("type", "articles");
         request.setAttribute("active", "blog");
-//        this.blogBaseData(request, contentCond);//获取公共分类标签等数据
+        this.blogBaseData(request, contentCond);//获取公共分类标签等数据
         return "site/blog";
     }
 

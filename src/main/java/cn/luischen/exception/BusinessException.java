@@ -23,13 +23,13 @@ public class BusinessException extends RuntimeException {
 
     public BusinessException(String message) {
         super(message);
-        this.errorCode = "fail";
+        this.errorCode = message;
         this.errorMessageArguments = new String[0];
     }
 
     public BusinessException(String message, Throwable cause) {
         super(message, cause);
-        this.errorCode = "fail";
+        this.errorCode = message;
         this.errorMessageArguments = new String[0];
     }
 

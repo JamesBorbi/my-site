@@ -193,7 +193,6 @@ public class ArticleController extends BaseController {
         contentDomain.setTags(tags);
         contentDomain.setCategories(categories);
         contentDomain.setAllowComment(allowComment ? 1 : 0);
-
         contentService.updateArticleById(contentDomain);
         return APIResponse.success();
     }

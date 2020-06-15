@@ -37,12 +37,12 @@
 
                 <th:block th:each="article: ${articles.list}">
                     <!--<th:block th:if="${articleStat.index % 2 != 0}">-->
-                            <div style="width: 45.5%; height: 300px;margin-left: 10px;margin-bottom:20px;background-color: #d5dde1;float: left;">
-                                <a th:href="${commons.blogPermalink(article.cid)}">
+                            <div style="width: 45.5%; height: 300px;margin-left: 10px;margin-bottom:20px;float: left;">
+                                <a th:href="${commons.blogPermalink(article.cid)}" target="_Blank">
                                         <img th:src="${commons.show_thumb(article.content) ?:commons.randomBlogPic(1322)}" alt=""
                                              style="width: 100%; height: 80%;"/>
                                 </a>
-                                <div>
+                                <div style="font-weight: bold;">
                                     <th:block th:text="${article.title}"></th:block>
                                 </div>
                                 <div>
